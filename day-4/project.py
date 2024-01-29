@@ -31,12 +31,13 @@ user_choice = int(input("What do you choose? Type 0 for Rock, 1 for paper, or 2 
 
 if user_choice >=3 or user_choice < 0:
     print("You typed an invalid number, you lose!")
-
+else:
+    print(f"your choice\n{game_images[user_choice]}")
+  
 import random
 
 computers_choice = random.randint(0,len(game_images)-1)
 
-print(f"your choice\n{game_images[user_choice]}")
 
 print(f"computer choice\n{game_images[computers_choice]}")
 
@@ -50,3 +51,5 @@ elif user_choice > computers_choice:
   print("You win!")
 elif computers_choice == user_choice:
   print("It's a draw")
+
+  
