@@ -16,6 +16,7 @@ if nr_letters < nr_numbers + nr_symbols:
 
 password = ""
 
+# we can use random.choice(arr) for chosing random numbers form arr
 # for symbols
 for item in range(0,nr_symbols):
     random_index_for_symbols = random.randint(0,len(symbols) - 1)
@@ -26,15 +27,34 @@ for item in range(0,nr_numbers):
     random_index_for_numbers = random.randint(0,len(numbers) - 1)
     password += numbers[random_index_for_numbers]
 
-# for characters if password is short
-characters_remaning = nr_letters - (nr_numbers + nr_symbols) 
+# for letters
 
-if characters_remaning > 0:
-    for item in range(0,characters_remaning):
-        random_index_for_character = random.randint(0, len(letters))
-        password += letters[random_index_for_character]
+for item in range(0,nr_letters):
+    random_index_for_character = random.randint(0, len(letters)-1)
+    password += letters[random_index_for_character]
     
 
-print(f"Your password \n {password}")
+print(f"Your easy password \n {password}")
+
+
+
+# hard level
+
+# create list form above string
+password_list = list(password)
+
+# shuffle the list 
+random.shuffle(password_list)
+
+# create string from list
+hard_password ="".join(password_list)
+
+
+print(f"Your hard password \n {hard_password}")
+
+
+
+
+
 
 
