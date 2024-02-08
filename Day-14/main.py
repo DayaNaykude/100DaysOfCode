@@ -26,8 +26,6 @@ def play_game(data):
   should_continue = True
   account_a = get_random_account(data)
   account_b = get_random_account(data)
-  print(account_a)
-  print(account_b)
   while should_continue:
     # show first account
     print(f"Compare A:{account_a['name']}, a {account_a['description']}, from {account_a['country']}")
@@ -47,7 +45,6 @@ def play_game(data):
       if account_a["follower_count"] < account_b["follower_count"]:
         account_a = account_b
       account_b = get_random_account(data)
-      print(account_a,account_b)
     else:
       print(f"Sorry that's wrong! final score:{score}")
       should_continue = False
