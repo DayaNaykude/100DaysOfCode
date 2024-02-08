@@ -20,6 +20,10 @@ def highest_followers(account_a,account_b):
 def is_user_choice_right(account_a, account_b, user_choice):
     return highest_followers(account_a,account_b) == user_choice
   
+# print account description 
+def print_description (account):
+    return print(f"Compare A:{account['name']}, a {account['description']}, from {account['country']}")
+  
 def play_game(data):
   print(logo)
   score = 0
@@ -28,12 +32,11 @@ def play_game(data):
   account_b = get_random_account(data)
   while should_continue:
     # show first account
-    print(f"Compare A:{account_a['name']}, a {account_a['description']}, from {account_a['country']}")
+    print_description (account_a)
     # print vs log
     print(vs)
     # show second account
-    print(f"Compare B:{account_b['name']}, a {account_b['description']}, from {account_b['country']}")
-
+    print_description (account_b)
     # ask user choice
     user_choice = input("Who has more followers:Type 'A' or 'B' : ").lower()
 
