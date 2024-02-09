@@ -71,7 +71,7 @@ def is_successful_transaction(drink_flavour, coins_inserted):
         return True
     else:
         offer_change = round((coins_inserted - drink_cost),2)
-        print(f"change: {offer_change}")
+        print(f"Here is change:$ {offer_change}")
         return True
 
 def coffe_machine(resources):
